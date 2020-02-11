@@ -24,3 +24,10 @@
   files: \.(c|cc|cxx|cpp|h|hpp|hxx|m)$
   language: script
   additional_dependencies: [oclint]
+- id: cppcheck
+  name: cppcheck
+  description: Check correctness of C code using cppcheck.
+  language: system
+  files: \.(c|cc|cxx|cpp|h|hpp|hxx)$
+  entry: cppcheck --error-exitcode=1
+  args: ["--enable=warning"]
