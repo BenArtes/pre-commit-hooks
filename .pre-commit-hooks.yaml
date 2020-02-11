@@ -5,11 +5,12 @@
 
 - id: clang-format
   name: clang-format
-  entry: hooks/clang-format
+  entry: clang-format -i
   description: Formats C/CPP code
   files: \.(c|cc|cxx|cpp|h|hpp|hxx|m)$
-  language: script
+  language: system
   additional_dependencies: [clang-format]
+  args: ['-fallback-style=none']
 - id: clang-tidy
   name: clang-tidy
   entry: hooks/clang-tidy
